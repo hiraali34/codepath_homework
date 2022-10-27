@@ -9,10 +9,10 @@ Time spent: 4 hours spent in total
 ### 1. Authenticated Stored Cross-Site Scripting (XSS) in YouTube URL Embeds
 
 - [ ] Summary: 
-  - Vulnerability types: XSS (CVE-2017-6817)
-  - Tested in version: 4.2 (affects versions 4.0 - 4.7.2)
-  - Fixed in version: 4.2.13
-- [ ] GIF Walkthrough: https://github.com/hiraali34/codepath_homework/blob/6947cc082e33e355991a2c128ac86452376bf0c4/youtube.gif
+       -Vulnerability types: XSS (CVE-2017-6817)
+       -Tested in version: 4.2 (affects versions 4.0 - 4.7.2)
+        -Fixed in version: 4.2.13
+- [ ] GIF Walkthrough:![](youtube.gif)
 - [ ] Steps to recreate: 
 - [ ] Sign in as an admin
 - [ ] Create a new Post
@@ -31,7 +31,7 @@ Time spent: 4 hours spent in total
   - Vulnerability types: XSS (CVE-2015-5622 and CVE-2015-5623)
   - Tested in version: 4.2 (affects versions 4.0 - 4.2.2
   - Fixed in version: 4.2.3
-- [ ] GIF Walkthrough: https://github.com/hiraali34/codepath_homework/blob/6947cc082e33e355991a2c128ac86452376bf0c4/XSS%20vulnerability.gif
+- [ ] GIF Walkthrough: ![](xss.gif)
 - [ ] Steps to recreate:
 - [ ] Sign in as an administrator
 - [ ] Create a new Post
@@ -52,7 +52,8 @@ Time spent: 4 hours spent in total
   - Vulnerability types:  XSS (CVE-2015-5622)
   - Tested in version: 4.2.2
   - Fixed in version: 4.2.3
-- [ ] GIF Walkthrough: https://github.com/hiraali34/codepath_homework/blob/edc6291d1a9feb1b0664127b97fca423eefb26ea/comment.gif
+- [ ] GIF Walkthrough:![](comment.gif)
+- [ ]  https://github.com/hiraali34/codepath_homework/blob/edc6291d1a9feb1b0664127b97fca423eefb26ea/comment.gif
 - [ ] Steps to recreate: Have version 4.2 installed
 - [ ] Create a wordpress account and login
 - [ ] Create/go to a post and add a comment that contains js:
