@@ -1,106 +1,55 @@
-# Project 7 - WordPress Pen Testing
+# Pen Testing Live Targets
 
-Time spent: 4 hours spent in total
+Time spent: 5 hours spent in total
 
-> Objective: Find, analyze, recreate, and document **five vulnerabilities** affecting an old version of WordPress
+> Objective: Identify vulnerabilities in three different versions of the Globitek website: blue, green, and red.
 
-## Pen Testing Report
+The six possible exploits are:
 
-### 1. Authenticated Stored Cross-Site Scripting (XSS) in YouTube URL Embeds
+* Username Enumeration
+* Insecure Direct Object Reference (IDOR)
+* SQL Injection (SQLi)
+* Cross-Site Scripting (XSS)
+* Cross-Site Request Forgery (CSRF)
+* Session Hijacking/Fixation
 
-- [ ] Summary: 
-       -Vulnerability types: XSS (CVE-2017-6817)
-       -Tested in version: 4.2 (affects versions 4.0 - 4.7.2)
-        -Fixed in version: 4.2.13
-- [ ] GIF Walkthrough:![](youtube.gif)
-- [ ] Steps to recreate: 
-- [ ] Sign in as an admin
-- [ ] Create a new Post
-- [ ] Switch from Visual editing mode to Text (HTML) editing mode
-- [ ] Insert the malicious YouTube embed shortcode:
-- [ ]   [embed src='https://www.youtube.com/embed/dQw4w9WgXcQ\x3csvg onload=alert("exploit!")\x3e'][/embed]
-- [ ] Affected source code:
-- [ ] https://core.trac.wordpress.org/browser/branches/4.2/src/wp-admin/admin-post.php
-- [ ] Referneces:
-- [ ]  https://wpscan.com/vulnerability/8768
-- [ ]  https://blog.sucuri.net/2017/03/stored-xss-in-wordpress-core.html
-  
-### 2. Authenticated Stored Cross-Site Scripting (XSS)
+Each color is vulnerable to only 2 of the 6 possible exploits. First discover which color has the specific vulnerability, then write a short description of how to exploit it, and finally demonstrate it using screenshots compiled into a GIF.
 
-- [ ] Summary: 
-  - Vulnerability types: XSS (CVE-2015-5622 and CVE-2015-5623)
-  - Tested in version: 4.2 (affects versions 4.0 - 4.2.2
-  - Fixed in version: 4.2.3
-- [ ] GIF Walkthrough: ![](xss.gif)
-- [ ] Steps to recreate:
-- [ ] Sign in as an administrator
-- [ ] Create a new Post
-- [ ] Switch from Visual editing mode to Text (HTML) editing mode
-- [ ] Insert the malicious a href code:
-- [ ]   <a href="[caption code=">]</a><a title=" onmouseover=alert('exploit!') ">link</a>
-- [ ] Affected source code:
-- [ ] https://blog.knownsec.com/2015/09/wordpress-vulnerability-analysis-cve-2015-5714-cve-2015-5715/
-- [ ] https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2015-5714
-- [ ] https://wordpress.org/news/2015/09/wordpress-4-3-1/
-- [ ] https://wpscan.com/vulnerability/8111
-- [ ] https://blog.checkpoint.com/2015/09/15/finding-vulnerabilities-in-core-wordpress-a-bug-hunters-trilogy-part-iii-ultimatum/
-  - [Link 1](https://core.trac.wordpress.org/browser/tags/version/src/source_file.php)
+## Blue
 
-### 3. Authenticated Stored Cross-Site Scripting (XSS) 
+Vulnerability #1: SQL INJECTION
+Description:  SQL Injection Under the salesperson page 
+the user can perform an attack by adding a SQL injection to the end of the URL, when adding ' OR SLEEP(5)=0--' to the end of the URL, the website shows a different staff member's profile, indicating that it responded to the SQL that was added. The mistake the developer made was not sanitizing the URL input.
 
-- [ ] Summary: 
-  - Vulnerability types:  XSS (CVE-2015-5622)
-  - Tested in version: 4.2.2
-  - Fixed in version: 4.2.3
-- [ ] GIF Walkthrough:![](comment.gif)
-- [ ]  https://github.com/hiraali34/codepath_homework/blob/edc6291d1a9feb1b0664127b97fca423eefb26ea/comment.gif
-- [ ] Steps to recreate: Have version 4.2 installed
-- [ ] Create a wordpress account and login
-- [ ] Create/go to a post and add a comment that contains js:
-- [ ]   <script>alert(document.cookie);</script>
-- [ ]   When comment is added/page is refreshed, script will run on user visiting the page.
-- [ ] Affected source code:
-- [ ] https://wpscan.com/vulnerability/0f027d7d-674b-4a63-9603-25ea68069c1d
-- [ ] https://twitter.com/klikkioy/status/624264122570526720
-  - [Link 1](https://core.trac.wordpress.org/browser/tags/version/src/source_file.php)
+<img src="blue-vuln1.gif">
 
 
+## Green
+
+Vulnerability #1: ______USER NAME ENUMERATION____________
+
+Description: The Website has the Username Enumeration error where the failure to login message differs for the Username that exists vs doesn't exist. The user which exist in the system is bold and which doesn not exist is not bold
+
+<img src="green-vuln1.gif">
 
 
+## Red
 
-## Assets
+Vulnerability #1: ________IDOR__________
 
-List any additional assets, such as scripts or files
+Description: GIF show an attacker getting access to the hidden user's accounts that the attacker is not permitted to view.
+ This is done through modifying the "id" parameter in the URL's to change the GET request. The attacker can access 2 hidden accounts
+ 1. Testy McTesterson (NOT PUBLIC UNTIL SEPT. 1)
+987-654-3210
+testy@globitek.com
+2. Lazy Lazyman (FIRED FOR STEALING)
+321-432-9876
+lazyman@globitek.com
 
-## Resources
 
-- [WordPress Source Browser](https://core.trac.wordpress.org/browser/)
-- [WordPress Developer Reference](https://developer.wordpress.org/reference/)
+<img src="red-vuln1.gif">
 
-GIFs created with  ...
-<!-- Recommended GIF Tools:
-[Kap](https://getkap.co/) for macOS
-[ScreenToGif](https://www.screentogif.com/) for Windows
-[peek](https://github.com/phw/peek) for Linux. -->
 
 ## Notes
 
-Chellenges:
-This assignment had alot of chellenges from getting the wpdistillery started to finding vulnerability
-the vulnerabilites i tried (3) of them it was easy to figure out through few searches but one of them that i wanted to do it took me 2 hours to do that one but i still could not figure it out (https://packetstormsecurity.com/files/131644/)
-
-## License
-
-    Copyright [2022] [Hira Ali]
-
-    Licensed under the Apache License, Version 2.0 (the "License");
-    you may not use this file except in compliance with the License.
-    You may obtain a copy of the License at
-
-        http://www.apache.org/licenses/LICENSE-2.0
-
-    Unless required by applicable law or agreed to in writing, software
-    distributed under the License is distributed on an "AS IS" BASIS,
-    WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
-    See the License for the specific language governing permissions and
-    limitations under the License.
+Describe any challenges encountered while doing the work
