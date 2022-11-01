@@ -21,7 +21,7 @@ Vulnerability #1: SQL INJECTION
 Description:  SQL Injection Under the salesperson page 
 the user can perform an attack by adding a SQL injection to the end of the URL, when adding ' OR SLEEP(5)=0--' to the end of the URL, the website shows a different staff member's profile, indicating that it responded to the SQL that was added. The mistake the developer made was not sanitizing the URL input.
 
-<img src="blue-vuln1.gif">
+![](blue.gif)
 
 
 ## Green
@@ -30,7 +30,7 @@ Vulnerability #1: ______USER NAME ENUMERATION____________
 
 Description: The Website has the Username Enumeration error where the failure to login message differs for the Username that exists vs doesn't exist. The user which exist in the system is bold and which doesn not exist is not bold
 
-<img src="green-vuln1.gif">
+![](green.gif)
 
 
 ## Red
@@ -47,7 +47,7 @@ testy@globitek.com
 lazyman@globitek.com
 
 
-<img src="red-vuln1.gif">
+![](red.gif)
 
 
 ## Notes
