@@ -7,6 +7,8 @@
 ### MHN-Admin Deployment (Required)
 
 **Summary:** How did you deploy it? Did you use GCP, AWS, Azure, Vagrant, VirtualBox, etc.?
+
+
 I used GCP to deploy my VM
 <img src="Installing Honeypot.gif">
 
@@ -14,6 +16,8 @@ I used GCP to deploy my VM
 ### Dionaea Honeypot Deployment (Required)
 
 **Summary:** Briefly in your own words, what does dionaea do?
+
+
 It is the Honeypot that is used for attacks, and tracks the attacks
 
 ![](Honeypot.gif)
@@ -22,6 +26,8 @@ It is the Honeypot that is used for attacks, and tracks the attacks
 ### Database Backup (Required) 
 
 **Summary:** What is the RDBMS that MHN-Admin uses? What information does the exported JSON file record?
+
+
 Mongoexpert db is used for MHN-admin, it is being used to store the attack record.
 <img src="json file.gif">
 
